@@ -41,18 +41,16 @@
             android:name="com.example.handsonandroid.CalendarActivity"
             android:label="@string/title_activity_calendar" >
         </activity>
-<<<<<<< HEAD
+
         <activity
             android:name="com.example.handsonandroid.EventPageActivity"
             android:label="default">
         </activity>
-        
-=======
+
          <activity
             android:name="com.example.handsonandroid.HomeActivity"
             android:label="default" >
         </activity>
->>>>>>> 59d005519cce2d87ea5e79dfdd47f727a6cfc41b
     </application>
 
 </manifest>
