@@ -6,6 +6,12 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 
+/**
+ * 
+ * @author Garrett
+ *
+ * The activity that shows the Log-in Screen, and uses the webservices to login as well.
+ */
 public class LoginActivity extends Activity implements OnClickListener {
 
 	@Override
@@ -33,6 +39,9 @@ public class LoginActivity extends Activity implements OnClickListener {
 		
 	}
 	
+	/**
+	 * OnStart, registers all the buttons listeners as this activity
+	 */
 	@Override
 	public void onStart(){
 		super.onStart();

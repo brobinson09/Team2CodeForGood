@@ -34,6 +34,12 @@
         android:hint="@string/password"
         android:inputType="textPassword" />
 
+    <TextView
+        android:id="@+id/dobText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date of Birth:" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,19 +47,29 @@
         android:orientation="horizontal" >
 
         <EditText
-            android:id="@+id/dateOfBirthText"
-            android:layout_width="234dp"
+            android:id="@+id/dobMonth"
+            android:layout_width="93dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Date of Birth"
+            android:hint="Month"
             tools:ignore="TextFields,HardcodedText" />
 
-        <Button
-            android:id="@+id/dateOfBirthButton"
-            android:layout_width="48dp"
-            android:layout_height="31dp"
-            android:text="img"
-            tools:ignore="HardcodedText" />
+        <EditText
+            android:id="@+id/dobDay"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Day"
+            tools:ignore="TextFields,HardcodedText" />
+
+        <EditText
+            android:id="@+id/dobYear"
+            android:layout_width="93dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Year"
+            tools:ignore="TextFields,HardcodedText" />
     </LinearLayout>
 
     <EditText

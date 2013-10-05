@@ -24,6 +24,13 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * 
+ * @author Garrett
+ *
+ *
+ * Activity to use to launch the Calendar for the application
+ */
 public class CalendarActivity extends Activity {
 
  public GregorianCalendar month, itemmonth;// calendar instances.
@@ -38,6 +45,9 @@ public class CalendarActivity extends Activity {
  ArrayList date;
  ArrayList desc;
 
+ /**
+  * What happens for the onCreate method.
+  */
  public void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
 	  setContentView(R.layout.activity_calendar);
@@ -47,6 +57,7 @@ public class CalendarActivity extends Activity {
 	  month = (GregorianCalendar) GregorianCalendar.getInstance();
 	  itemmonth = (GregorianCalendar) month.clone();
 	
+	  //Create new items arraylist
 	  items = new ArrayList();
 	
 	  adapter = new CalendarAdapter(this, month);
@@ -62,6 +73,8 @@ public class CalendarActivity extends Activity {
 	
 	  RelativeLayout previous = (RelativeLayout) findViewById(R.id.previous);
 	
+	  
+	  //Set the button lsiterners
 	  previous.setOnClickListener(new OnClickListener() {
 
    @Override
@@ -82,6 +95,10 @@ public class CalendarActivity extends Activity {
    }
   });
 
+  
+  /**
+   * What happens when one of the calendar items are clicked
+   */
   gridview.setOnItemClickListener(new OnItemClickListener() {
    public void onItemClick(AdapterView parent, View v,
 	 int position, long id) {
@@ -136,6 +153,9 @@ public class CalendarActivity extends Activity {
   	});
  }
 
+ /**
+  * Set the next month when the next button is clicked.
+  */
  	protected void setNextMonth() {
  		if (month.get(GregorianCalendar.MONTH) == month
  				.getActualMaximum(GregorianCalendar.MONTH)) {
@@ -148,6 +168,9 @@ public class CalendarActivity extends Activity {
 
  	}
 
+ 	/**
+ 	 * Set the previous month when the previous button is clicked.
+ 	 */
  	protected void setPreviousMonth() {
  		if (month.get(GregorianCalendar.MONTH) == month
  				.getActualMinimum(GregorianCalendar.MONTH)) {
@@ -160,11 +183,18 @@ public class CalendarActivity extends Activity {
 
  	}
 
+ 	/**
+ 	 * Show the toast
+ 	 * @param string : String to toast
+ 	 */
  	protected void showToast(String string) {
  		Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
 
  	}
 
+ 	/**
+ 	 * Refresh the calendar
+ 	 */
  	public void refreshCalendar() {
  		TextView title = (TextView) findViewById(R.id.title);
 
@@ -175,6 +205,9 @@ public class CalendarActivity extends Activity {
  		title.setText(android.text.format.DateFormat.format("MMMM yyyy", month));
  	}
 
+ 	/**
+ 	 * Run the calendar Runnable, clears the items, updates the items, currently prints out the contents as well.
+ 	 */
  	public Runnable calendarUpdater = new Runnable() {
 
  		@Override
