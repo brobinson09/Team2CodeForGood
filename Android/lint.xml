@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
+    <issue id="ButtonStyle">
+        <ignore path="res/layout/activity_event.xml" />
+    </issue>
     <issue id="HardcodedText">
+        <ignore path="res/layout/activity_calendar.xml" />
+        <ignore path="res/layout/activity_event.xml" />
+        <ignore path="res/layout/activity_login.xml" />
+        <ignore path="res/layout/activity_profile.xml" />
+        <ignore path="res/layout/activity_register.xml" />
         <ignore path="res/layout/register.xml" />
     </issue>
 </lint>
