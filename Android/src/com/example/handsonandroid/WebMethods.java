@@ -3,6 +3,8 @@ package com.example.handsonandroid;
 import java.sql.Date;
 import java.util.ArrayList;
 
+import android.content.Context;
+
 /**
  * 
  * @author Garrett
@@ -16,11 +18,13 @@ import java.util.ArrayList;
  */
 public class WebMethods {
 
+	private static Context ctx;
+	
 	/**
 	 * Default Constructor
 	 */
-	public WebMethods(){
-		
+	public WebMethods(Context ctx){
+		WebMethods.ctx = ctx;
 	}
 	
 	/**
@@ -40,6 +44,9 @@ public class WebMethods {
 	 * @return : Return false if login was unsuccessful
 	 */
 	public static boolean loginFromPref(){
+		
+		String userName = SaveSharedPreference.getData(WebMethods.ctx, SaveSharedPreference.USERNAME_KEY);
+		String password = SaveSharedPreference.getData(WebMethods.ctx, SaveSharedPreference.USER_PASS_KEY);
 		
 		return false;
 	}
@@ -105,21 +112,39 @@ public class WebMethods {
 	
 	/**
 	 * Query events by Zipcode
+	 * @param zipcode : The zipcode to query
+	 * @return : The list of events
 	 */
-	public static void queryByZipcode(){
+	public static ArrayList<Events> queryByZipcode(int zipcode){
 		
+		return null;
 	}
 	
+	/**
+	 * Send an update to facebook, not implemented
+	 */
 	public static void updateFacebook(){
 		
 	}
 	
+	/**
+	 * Send an update to twitter, not implemented
+	 */
 	public static void updateTwitter(){
 		
 	}
 	
 	//Helper Additional Methods
 	
+	/**
+	 * Add the event to the users calendar, currently unimplemented
+	 * @param title : Title of the event
+	 * @param description : Description of the event
+	 * @param location : Location of the event
+	 * @param date : Date of the event
+	 * @param beginTime : The beginning time of the event
+	 * @param endTime : The end time of the event
+	 */
 	private static void addEventToCalendar(String title, String description,  String location, Date date, int beginTime, int endTime){
 		
 	}
