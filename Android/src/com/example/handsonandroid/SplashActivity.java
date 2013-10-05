@@ -16,18 +16,20 @@ public class SplashActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_splash);
 		
+		
 		//Use a timer to keep the splash screen up long enough to show my logo.
 		
 		new Handler().postDelayed(new Runnable(){
 			
 			/*Show the splash screen
+			 * sample commit
 			 * 
 			 */
 			
 			@Override
 			public void run(){
 				//Once timer is over, go to the new activity.
-				Intent i = new Intent(SplashActivity.this, MainActivity.class);
+				Intent i = new Intent(SplashActivity.this, FeedActivity.class);
 				startActivity(i);
 				
 				finish();
